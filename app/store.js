@@ -1,4 +1,5 @@
 import {createStore, applyMiddleware} from 'redux'
+import axios from 'axios'
 import loggingMiddleware from 'redux-logger'
 
 const GOT_PETS_FROM_SERVER = 'GOT_PETS_FROM_SERVER'
