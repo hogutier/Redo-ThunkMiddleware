@@ -1,8 +1,14 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {List} from './utils'
+import {getPets} from './store'
 
 class Pets extends React.Component {
+
+  componentDidMount() {
+    this.props.getPets()
+  }
+
   render () {
     const {pets} = this.props
 
@@ -30,7 +36,9 @@ const mapState = (state) => {
 }
 
 const mapDispatch = (dispatch) => {
-  // YOUR CODE HERE
+  return {
+    getPets: () => dispatch(getPets())
+  }
 }
 
 export default connect(mapState, mapDispatch)(Pets)
